@@ -392,10 +392,24 @@ body.custom-cursor-active *{cursor:none}
 .nav-contact{display:inline-flex;align-items:center;padding:10px 20px;border-radius:10px;font-size:14px;font-weight:500;background:var(--gradient-1);color:#fff;text-decoration:none;transition:all .35s cubic-bezier(0.34,1.56,0.64,1)}
 .nav-contact:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 8px 30px var(--accent-glow)}
 .mobile-menu-btn{display:none;background:none;border:none;color:var(--text-primary);cursor:pointer;padding:8px}
-.mobile-nav{position:fixed;inset:0;z-index:99;background:rgba(10,10,11,0.95);backdrop-filter:blur(30px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .4s var(--transition)}
+.mobile-nav{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .35s var(--transition)}
 .mobile-nav.open{opacity:1;pointer-events:all}
-.mobile-nav a{font-size:28px;font-weight:600;color:var(--text-secondary);text-decoration:none;transition:color .3s var(--transition)}
-.mobile-nav a:hover{color:var(--text-primary)}
+.mobile-nav-inner{position:relative;display:flex;flex-direction:column;align-items:stretch;width:100%;max-width:300px;background:linear-gradient(180deg,var(--bg-secondary) 0%,var(--bg-card) 100%);border:1px solid var(--border-hover);border-radius:20px;padding:28px 20px 24px;box-shadow:0 0 0 1px rgba(0,172,193,.08),0 32px 64px rgba(0,0,0,.5);transform:scale(0.94);transition:transform .4s cubic-bezier(0.34,1.56,0.64,1)}
+.mobile-nav-inner::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#0ea5e9,#06b6d4,#00acc1);opacity:.9}
+.mobile-nav.open .mobile-nav-inner{transform:scale(1)}
+.mobile-nav-close{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--bg-tertiary);color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s var(--transition)}
+.mobile-nav-close:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-subtle)}
+.mobile-nav-links{display:flex;flex-direction:column;width:100%;gap:2px;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.mobile-nav-links a{font-size:17px;font-weight:600;color:var(--text-primary);text-decoration:none;padding:12px 14px;border-radius:10px;transition:all .2s var(--transition);letter-spacing:-.02em}
+.mobile-nav-links a:hover{color:var(--accent);background:var(--accent-subtle)}
+.mobile-nav-footer{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%}
+.mobile-nav .nav-social{display:flex;gap:10px;justify-content:center}
+.mobile-nav .nav-social .nav-icon{width:42px;height:42px;border-radius:10px;background:var(--bg-tertiary);border:1px solid var(--border);color:var(--text-secondary);display:flex;align-items:center;justify-content:center;transition:all .25s var(--transition)}
+.mobile-nav .nav-social .nav-icon:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-subtle)}
+.mobile-nav-lang{display:flex;gap:8px;justify-content:center}
+.mobile-nav-lang .lang-btn{width:48px;height:44px;border-radius:10px;font-size:14px;font-weight:600}
+.mobile-nav .nav-contact{margin-top:2px;width:100%;justify-content:center;padding:12px 18px;font-weight:500;font-size:15px;background:transparent;color:var(--accent);border:1px solid var(--accent);border-radius:10px;box-shadow:none}
+.mobile-nav .nav-contact:hover{background:var(--accent-subtle);transform:none;box-shadow:none}
 
 /* ── Hero ── */
 .hero-old{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:120px 40px 80px}
@@ -553,6 +567,10 @@ body.custom-cursor-active *{cursor:none}
 .carousel-dots{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:400px}
 .carousel-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:none;cursor:pointer;transition:all .3s var(--transition)}
 .carousel-dot.active{background:var(--accent);width:24px;border-radius:4px}
+@media(max-width:768px){
+.carousel-track{padding-left:calc(50vw - 160px);padding-right:calc(50vw - 160px)}
+.carousel-card{scroll-snap-align:center}
+}
 
 /* ── Contributions (same card design as portfolio) ── */
 #contributions .section-title{margin-bottom:12px}
@@ -759,18 +777,29 @@ function Nav({ t, lang, setLang, navItems }) {
         </button>
       </nav>
       <div className={`mobile-nav ${mobileOpen ? "open" : ""}`} onClick={(e) => { if (e.target === e.currentTarget) setMobileOpen(false); }} role="dialog" aria-modal="true" aria-label="Menu">
-        {navItems.map(([k, h]) => <a key={k} href={h} onClick={() => setMobileOpen(false)}>{t.nav[k]}</a>)}
-        <div className="nav-social">
-          <a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="nav-icon" aria-label="GitHub" onClick={() => setMobileOpen(false)}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-          <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="nav-icon" aria-label="LinkedIn" onClick={() => setMobileOpen(false)}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
+        <div className="mobile-nav-inner" onClick={e => e.stopPropagation()}>
+          <button type="button" className="mobile-nav-close" onClick={() => setMobileOpen(false)} aria-label="Fechar menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+          <nav className="mobile-nav-links">
+            {navItems.map(([k, h]) => <a key={k} href={h} onClick={() => setMobileOpen(false)}>{t.nav[k]}</a>)}
+          </nav>
+          <div className="mobile-nav-footer">
+            <div className="nav-social">
+              <a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="nav-icon" aria-label="GitHub" onClick={() => setMobileOpen(false)}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="nav-icon" aria-label="LinkedIn" onClick={() => setMobileOpen(false)}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+            </div>
+            <div className="mobile-nav-lang">
+              <button type="button" className={`lang-btn ${lang === "pt" ? "active" : ""}`} onClick={() => { setLang("pt"); setMobileOpen(false); }}>PT</button>
+              <button type="button" className={`lang-btn ${lang === "en" ? "active" : ""}`} onClick={() => { setLang("en"); setMobileOpen(false); }}>EN</button>
+            </div>
+            <a href="#contact" className="nav-contact" onClick={() => setMobileOpen(false)}>{t.nav.contact}</a>
+          </div>
         </div>
-        <button className={`lang-btn ${lang === "pt" ? "active" : ""}`} onClick={() => { setLang("pt"); setMobileOpen(false); }}>PT</button>
-        <button className={`lang-btn ${lang === "en" ? "active" : ""}`} onClick={() => { setLang("en"); setMobileOpen(false); }}>EN</button>
-        <a href="#contact" className="nav-contact" onClick={() => setMobileOpen(false)}>{t.nav.contact}</a>
       </div>
     </>
   );
