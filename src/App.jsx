@@ -21,11 +21,12 @@ const PROJECT_ICONS = {
 
 // ─── Links ─
 const LINKS = {
-  github: "https://github.com/myoui01",
+  github: "https://github.com/marianamarques01",
   linkedin: "https://www.linkedin.com/in/mariana-marques-dev/",
   behance: "https://www.behance.net/marianamarques108",
   whatsapp: "https://wa.me/5531984946938",
-  cv: "/CV Mariana.pdf",
+  cvPt: "/CV Mariana 2026 pt.pdf",
+  cvEn: "/CV Mariana.pdf",
 };
 
 // ─── i18n Content ────────────────────────────────────────────
@@ -76,7 +77,7 @@ const content = {
       items: [
         {
           tag: "Mobile · Social", title: "Collecty Card", icon: "cards", color: "#ec4899",
-          image: "/projects/collecty-card.jpg",
+          image: "/projects/collectycard.png",
           brief: "Sistema de vendas + rede social para colecionadores de cards de K-pop.",
           problem: "As vendas de cards K-pop acontecem de forma informal em redes sociais, sem organização, segurança ou eficiência para colecionadores e vendedores.",
           role: "Design completo no Figma, desenvolvimento do app com Angular + Ionic e TypeScript, integração com Firebase. Landing page com vídeo demonstrativo e documentação das telas.",
@@ -84,44 +85,37 @@ const content = {
           result: "O vídeo de apresentação ultrapassou 25 mil visualizações no Twitter com diversos comentários positivos da comunidade. Solução completa para fãs e vendedores.",
         },
         {
-          tag: "EdTech · PWA", title: "ENEM Pet", icon: "game", color: "#6366f1",
-          image: "/projects/enem-pet.jpg",
-          brief: "Plataforma gamificada com pet virtual para preparação do ENEM.",
+          tag: "EdTech · PWA · Mobile", title: "Broto", icon: "game", color: "#6366f1",
+          image: "/projects/broto.png",
+          brief: "Plataforma gamificada com pet virtual para preparação do ENEM. Versão web (PWA) e app mobile.",
           problem: "Estudantes brasileiros têm dificuldade em manter consistência nos estudos para o ENEM, levando à desmotivação e baixo desempenho.",
-          role: "Arquitetura completa do frontend, design do sistema de gamificação com pet virtual (Broto), integração com banco de 1.800+ questões históricas, dashboards de performance e planejador de rotina com IA.",
-          tech: ["React", "TypeScript", "Supabase", "PWA", "Vite"],
-          result: "Plataforma gamificada com 5 módulos integrados, uso offline e vínculo emocional que aumenta retenção de estudo.",
+          role: "Arquitetura completa do frontend (web e mobile), design do sistema de gamificação com pet virtual (Broto), integração com banco de 1.800+ questões históricas, dashboards de performance e planejador de rotina com IA. Desenvolvimento do app mobile com React Native.",
+          tech: ["React", "React Native", "TypeScript", "Supabase", "PWA", "Vite"],
+          result: "Plataforma gamificada com 5 módulos integrados, versão PWA e app mobile (React Native), uso offline e vínculo emocional que aumenta retenção de estudo.",
         },
         {
-          tag: "Plataforma · Publicação", title: "Reppub", icon: "newspaper", color: "#06b6d4",
-          image: "/projects/reppub.jpg",
-          brief: "Plataforma de republicação e curadoria de conteúdo.",
-          problem: "Organizações precisavam de uma solução para republicar e organizar conteúdo de forma centralizada e acessível.",
-          role: "Desenvolvimento frontend, design de interfaces e integração com APIs. Implementação de fluxos de curadoria e visualização de conteúdo.",
+          tag: "App · Moradia", title: "Reppub", icon: "building", color: "#06b6d4",
+          image: "/projects/reppub.png",
+          brief: "App para conectar pessoas em busca de moradia compartilhada e facilitar a formação de repúblicas.",
+          problem: "Pessoas que buscam moradia compartilhada ou repúblicas tinham dificuldade para se conectar e encontrar companheiros de casa de forma prática e segura.",
+          role: "Desenvolvimento frontend do app, design de interfaces e integração com APIs. Implementação de fluxos de busca, perfis e conexão entre usuários.",
           tech: ["React", "TypeScript", "REST APIs"],
-          result: "Plataforma funcional que facilita a republicação e organização de conteúdo para equipes.",
+          result: "App funcional que conecta pessoas em busca de moradia compartilhada e facilita a formação de repúblicas.",
         },
         {
           tag: "Freelancer · Institucional", title: "Liderban", icon: "building", color: "#14b8a6",
-          image: "/projects/liderban.jpg",
-          brief: "Site institucional para empresa do setor financeiro.",
-          problem: "A Liderban precisava de presença digital profissional para transmitir credibilidade e facilitar o contato com clientes.",
-          role: "Design e desenvolvimento completo do site institucional. Estruturação de páginas, formulários de contato e integração com identidade visual da marca.",
+          image: "/projects/liderban.png",
+          link: "https://liderban.netlify.app/",
+          brief: "Soluções de saneamento móvel: banheiros móveis (linhas polietileno e modular) e estruturas modulares com design customizado.",
+          problem: "A Liderban precisava de presença digital profissional para apresentar seus serviços de saneamento móvel, banheiros móveis e estruturas modulares, transmitindo credibilidade e facilitando o contato com clientes.",
+          role: "Design e desenvolvimento completo do site institucional. Estruturação de páginas de serviços (banheiros móveis, estruturas modulares), formulários de contato e integração com identidade visual da marca.",
           tech: ["HTML", "CSS", "JavaScript", "UI/UX Design"],
-          result: "Site moderno e responsivo que reforça a imagem da empresa no mercado.",
-        },
-        {
-          tag: "Freelancer · E-commerce", title: "Val Cegs Kpop Store", icon: "shopping-cart", color: "#f43f5e",
-          image: "/projects/val-cegs.jpg",
-          brief: "Loja virtual especializada em produtos K-pop.",
-          problem: "Colecionadores de K-pop precisavam de um canal confiável para comprar álbuns, photocards e merch oficial.",
-          role: "Desenvolvimento do e-commerce completo: catálogo de produtos, carrinho, checkout e gestão de pedidos. Design focado no público fã de K-pop.",
-          tech: ["React", "E-commerce", "UI/UX Design"],
-          result: "Loja online funcional com experiência de compra otimizada para o nicho.",
+          result: "Site moderno e responsivo que comunica as soluções da empresa (saneamento móvel, bem-estar e estruturas modulares) e reforça sua imagem no mercado.",
         },
         {
           tag: "Freelancer · Institucional", title: "SWS Segurança", icon: "shield", color: "#0ea5e9",
-          image: "/projects/sws.jpg",
+          image: "/projects/sws.png",
+          link: "https://swsseguranca.com.br/",
           brief: "Site institucional para empresa de segurança.",
           problem: "A SWS Segurança precisava de um site que apresentasse seus serviços e transmitisse confiança no segmento de segurança.",
           role: "Design e desenvolvimento do site institucional. Páginas de serviços, sobre a empresa e canais de contato com layout profissional.",
@@ -134,11 +128,12 @@ const content = {
       label: "Contribuições recentes",
       title: "Projetos em que contribuí",
       subtitle: "Sistemas e plataformas em que atuei no último ano.",
+      imageNote: "Nem todos os projetos exibem imagem por serem de propriedade das empresas em que atuei.",
       items: [
-        { name: "Sistema LMS White Label", tag: "EdTech · Plataforma", brief: "Plataforma de aprendizagem white label utilizada no projeto Desenvolve.", color: "#00ACC1", icon: "chart" },
+        { name: "Sistema LMS White Label", tag: "EdTech · Plataforma", brief: "Plataforma de aprendizagem white label utilizada no projeto Desenvolve.", color: "#00ACC1", icon: "chart", image: "/projects/lms.png", imageAlign: "left" },
+        { name: "My Coach", tag: "IA · Mentoria", brief: "Aplicativo de mentoria e acompanhamento de escolas, alunos etc. com suporte de IA.", color: "#14b8a6", icon: "game", image: "/projects/mycoach.png", imageAlign: "left" },
         { name: "EduGenerator", tag: "EdTech · IA", brief: "Ferramenta de geração de conteúdo educacional com inteligência artificial.", color: "#6366f1", icon: "game" },
         { name: "EduFlow", tag: "EdTech · Gestão", brief: "Plataforma de fluxos de aprendizagem e gestão educacional, com geração de material didático a partir de IA.", color: "#06b6d4", icon: "newspaper" },
-        { name: "My Coach", tag: "Mobile · Mentoria", brief: "Aplicativo de mentoria e acompanhamento de escolas, alunos etc. com suporte de IA.", color: "#14b8a6", icon: "game" },
         { name: "SGA", tag: "Corporativo · Gestão", brief: "Sistema de gestão acadêmica e administrativa.", color: "#8b5cf6", icon: "building" },
         { name: "Alegria Telecom Dashboard", tag: "Telecom · BI", brief: "Dashboard de visualização e análise de dados para a Alegria Telecom.", color: "#0ea5e9", icon: "chart" },
       ],
@@ -214,7 +209,7 @@ const content = {
       items: [
         {
           tag: "Mobile · Social", title: "Collecty Card", icon: "cards", color: "#ec4899",
-          image: "/projects/collecty-card.jpg",
+          image: "/projects/collectycard.png",
           brief: "Sales system + social network for K-pop card collectors.",
           problem: "K-pop card sales happen informally on social media, without organization, security or efficiency for collectors and sellers.",
           role: "Complete design in Figma, app development with Angular + Ionic and TypeScript, Firebase integration. Landing page with demo video and screen documentation.",
@@ -222,44 +217,37 @@ const content = {
           result: "The presentation video exceeded 25k views on Twitter with positive feedback from the community. Complete solution for fans and sellers.",
         },
         {
-          tag: "EdTech · PWA", title: "ENEM Pet", icon: "game", color: "#6366f1",
-          image: "/projects/enem-pet.jpg",
-          brief: "Gamified platform with virtual pet for ENEM exam preparation.",
+          tag: "EdTech · PWA · Mobile", title: "Broto", icon: "game", color: "#6366f1",
+          image: "/projects/broto.png",
+          brief: "Gamified platform with virtual pet for ENEM exam preparation. Web (PWA) and mobile app.",
           problem: "Brazilian students struggle to maintain consistency in their ENEM exam preparation, leading to demotivation and poor performance.",
-          role: "Complete frontend architecture, gamification system design with virtual pet (Broto), integration with 1,800+ historical questions database, performance dashboards and AI-powered study planner.",
-          tech: ["React", "TypeScript", "Supabase", "PWA", "Vite"],
-          result: "Gamified platform with 5 integrated modules, offline support and emotional bonding that increases study retention.",
+          role: "Complete frontend architecture (web and mobile), gamification system design with virtual pet (Broto), integration with 1,800+ historical questions database, performance dashboards and AI-powered study planner. Mobile app development with React Native.",
+          tech: ["React", "React Native", "TypeScript", "Supabase", "PWA", "Vite"],
+          result: "Gamified platform with 5 integrated modules, PWA and mobile app (React Native), offline support and emotional bonding that increases study retention.",
         },
         {
-          tag: "Platform · Publishing", title: "Reppub", icon: "newspaper", color: "#06b6d4",
-          image: "/projects/reppub.jpg",
-          brief: "Content republication and curation platform.",
-          problem: "Organizations needed a solution to republish and organize content in a centralized, accessible way.",
-          role: "Frontend development, interface design and API integration. Implementation of curation flows and content visualization.",
+          tag: "App · Housing", title: "Reppub", icon: "building", color: "#06b6d4",
+          image: "/projects/reppub.png",
+          brief: "App to connect people looking for shared housing and facilitate forming shared living arrangements.",
+          problem: "People seeking shared housing or roommates had difficulty connecting and finding compatible housemates in a practical and safe way.",
+          role: "Frontend development of the app, interface design and API integration. Implementation of search flows, profiles and user matching.",
           tech: ["React", "TypeScript", "REST APIs"],
-          result: "Functional platform that facilitates content republication and organization for teams.",
+          result: "Functional app that connects people looking for shared housing and facilitates forming shared living arrangements.",
         },
         {
           tag: "Freelance · Corporate", title: "Liderban", icon: "building", color: "#14b8a6",
-          image: "/projects/liderban.jpg",
-          brief: "Corporate website for a financial sector company.",
-          problem: "Liderban needed a professional digital presence to convey credibility and facilitate client contact.",
-          role: "Complete design and development of the corporate website. Page structure, contact forms and brand identity integration.",
+          image: "/projects/liderban.png",
+          link: "https://liderban.netlify.app/",
+          brief: "Mobile sanitation solutions: mobile bathrooms (polyethylene and modular lines) and modular structures with custom design.",
+          problem: "Liderban needed a professional digital presence to present its mobile sanitation, mobile bathroom and modular structure services, conveying credibility and facilitating client contact.",
+          role: "Complete design and development of the corporate website. Service pages (mobile bathrooms, modular structures), contact forms and brand identity integration.",
           tech: ["HTML", "CSS", "JavaScript", "UI/UX Design"],
-          result: "Modern, responsive site that reinforces the company's image in the market.",
-        },
-        {
-          tag: "Freelance · E-commerce", title: "Val Cegs Kpop Store", emoji: "🛒", icon: "shopping-cart", color: "#f43f5e",
-          image: "/projects/val-cegs.jpg",
-          brief: "Online store specialized in K-pop products.",
-          problem: "K-pop collectors needed a reliable channel to buy albums, photocards and official merch.",
-          role: "Complete e-commerce development: product catalog, cart, checkout and order management. Design focused on K-pop fan audience.",
-          tech: ["React", "E-commerce", "UI/UX Design"],
-          result: "Functional online store with optimized shopping experience for the niche.",
+          result: "Modern, responsive site that communicates the company's solutions (mobile sanitation, wellbeing and modular structures) and reinforces its market image.",
         },
         {
           tag: "Freelance · Corporate", title: "SWS Segurança", icon: "shield", color: "#0ea5e9",
-          image: "/projects/sws.jpg",
+          image: "/projects/sws.png",
+          link: "https://swsseguranca.com.br/",
           brief: "Corporate website for a security company.",
           problem: "SWS Segurança needed a site to present its services and convey trust in the security segment.",
           role: "Design and development of the corporate website. Service pages, about the company and contact channels with professional layout.",
@@ -272,11 +260,12 @@ const content = {
       label: "Recent contributions",
       title: "Projects I've contributed to",
       subtitle: "Systems and platforms I've worked on in the last year.",
+      imageNote: "Not all projects display an image as they are property of the companies I've worked with.",
       items: [
-        { name: "LMS White Label System", tag: "EdTech · Platform", brief: "White-label learning platform used in the Desenvolve project.", color: "#00ACC1", icon: "chart" },
+        { name: "LMS White Label System", tag: "EdTech · Platform", brief: "White-label learning platform used in the Desenvolve project.", color: "#00ACC1", icon: "chart", image: "/projects/lms.png", imageAlign: "left" },
+        { name: "My Coach", tag: "IA · Mentoring", brief: "Mentoring and follow-up app for schools, students and more, with AI support.", color: "#14b8a6", icon: "game", image: "/projects/mycoach.png", imageAlign: "left" },
         { name: "EduGenerator", tag: "EdTech · AI", brief: "Educational content generation tool with artificial intelligence.", color: "#6366f1", icon: "game" },
         { name: "EduFlow", tag: "EdTech · Management", brief: "Learning flows and educational management platform, with AI-powered educational material generation.", color: "#06b6d4", icon: "newspaper" },
-        { name: "My Coach", tag: "Mobile · Mentoring", brief: "Mentoring and follow-up app for schools, students and more, with AI support.", color: "#14b8a6", icon: "game" },
         { name: "SGA", tag: "Enterprise · Management", brief: "Academic and administrative management system.", color: "#8b5cf6", icon: "building" },
         { name: "Alegria Telecom Dashboard", tag: "Telecom · BI", brief: "Data visualization and analysis dashboard for Alegria Telecom.", color: "#0ea5e9", icon: "chart" },
       ],
@@ -541,7 +530,7 @@ body.custom-cursor-active *{cursor:none}
 @keyframes carouselCardReveal{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .carousel-card:hover{border-color:rgba(0,172,193,.35);transform:translateY(-8px) scale(1.01);box-shadow:0 24px 48px rgba(0,0,0,.4),0 0 0 1px rgba(0,172,193,.15)}
 .carousel-card-image-wrap{flex:0 0 45%;min-width:0;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--bg-tertiary) 0%,var(--bg-secondary) 100%);align-self:stretch}
-.carousel-card-image-wrap>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(0.34,1.56,0.64,1)}
+.carousel-card-image-wrap>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(0.34,1.56,0.64,1);filter:brightness(0.88)}
 .carousel-card:hover .carousel-card-image{transform:scale(1.06)}
 .carousel-card-image-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .4s var(--transition);z-index:1}
 .carousel-card-image-placeholder.visible{opacity:1}
@@ -568,11 +557,16 @@ body.custom-cursor-active *{cursor:none}
 /* ── Contributions (same card design as portfolio) ── */
 #contributions .section-title{margin-bottom:12px}
 #contributions .section-subtitle{margin-bottom:48px}
+.contribution-image-note{font-size:12px;color:var(--text-tertiary);line-height:1.6;max-width:520px;margin:28px auto 0;text-align:center;font-style:italic}
 .contributions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:1100px;margin:0 auto}
 .contribution-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all .5s cubic-bezier(0.34,1.56,0.64,1);display:flex;flex-direction:row;min-height:200px;box-shadow:0 4px 24px rgba(0,0,0,.2)}
 .contribution-card:hover{border-color:rgba(0,172,193,.35);transform:translateY(-8px) scale(1.01);box-shadow:0 24px 48px rgba(0,0,0,.4),0 0 0 1px rgba(0,172,193,.15)}
-.contribution-card-image{flex:0 0 45%;min-width:0;position:relative;overflow:hidden;align-self:stretch}
-.contribution-card-image-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.contribution-card-image{flex:0 0 45%;min-width:0;position:relative;overflow:hidden;align-self:stretch;background:linear-gradient(135deg,var(--bg-tertiary) 0%,var(--bg-secondary) 100%)}
+.contribution-card-image>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(0.78);transition:transform .5s cubic-bezier(0.34,1.56,0.64,1),filter .4s var(--transition)}
+.contribution-card-image.image-left>img{object-position:left center}
+.contribution-card:hover .contribution-card-image>img{transform:scale(1.08);filter:brightness(1)}
+.contribution-card-image-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0;opacity:0;transition:opacity .3s var(--transition)}
+.contribution-card-image-placeholder.visible{opacity:1}
 .contribution-card-image-placeholder svg{width:48px;height:48px;opacity:.5;color:inherit}
 .contribution-card-content{flex:1;min-width:0;display:flex;flex-direction:column;padding:24px 28px;justify-content:space-between}
 .contribution-card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
@@ -600,6 +594,10 @@ body.custom-cursor-active *{cursor:none}
 .modal-section-text{font-size:15px;color:var(--text-secondary);line-height:1.8}
 .modal-techs{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
 .modal-tech{padding:6px 14px;background:var(--accent-subtle);border:1px solid rgba(0,172,193,.12);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+.modal-image-wrap{position:relative;overflow:hidden;min-height:200px;aspect-ratio:16/10;background:var(--bg-tertiary)}
+.modal-image-wrap .modal-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.88)}
+.modal-image-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0}
+.modal-image-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.25) 100%);pointer-events:none;z-index:1}
 
 /* ── Thinking ── */
 .thinking-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -779,7 +777,9 @@ function Nav({ t, lang, setLang, navItems }) {
 }
 
 // ─── Hero (foto, nome, cargo, descrição, CTAs, redes, scroll hint) ─
-function Hero({ t }) {
+function Hero({ t, lang }) {
+  const cvLink = LINKS.cvPt;
+  const cvDownloadName = "CV-Mariana-2026-pt.pdf";
   return (
     <>
       <section className="hero-old" id="hero">
@@ -803,7 +803,7 @@ function Hero({ t }) {
               {t.hero.ctaContact}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href={LINKS.cv} download="Mariana-Marques-CV.pdf" className="btn btn-secondary hero-old-cta-cv">
+            <a href={cvLink} download={cvDownloadName} className="btn btn-secondary hero-old-cta-cv">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               {t.hero.cvDownload}
             </a>
@@ -920,19 +920,24 @@ function Stack({ t }) {
 }
 
 function ProjectModal({ project, labels, closeLabel, onClose }) {
+  const [imageError, setImageError] = useState(false);
+  useEffect(() => {
+    setImageError(false);
+  }, [project?.title]);
   useEffect(() => {
     const h = (e) => { if (e.key === "Escape") onClose(); };
     document.addEventListener("keydown", h);
     document.body.style.overflow = "hidden";
     return () => { document.removeEventListener("keydown", h); document.body.style.overflow = ""; };
   }, [onClose]);
+  const showImage = project?.image && !imageError;
   return (
     <div className={`modal-overlay ${project ? "open" : ""}`} onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
       {project && (
         <div className="modal-content" role="dialog" aria-modal="true" aria-label={project.title}>
-          <div className="modal-image-wrap" style={project.image ? {} : { background: `linear-gradient(135deg, ${project.color}30 0%, ${project.color}10 100%)` }}>
-            {project.image ? (
-              <img src={project.image} alt={project.title} className="modal-image" />
+          <div className="modal-image-wrap" style={showImage ? {} : { background: `linear-gradient(135deg, ${project.color}30 0%, ${project.color}10 100%)` }}>
+            {showImage ? (
+              <img src={project.image} alt={project.title} className="modal-image" onError={() => setImageError(true)} />
             ) : (
               <div className="modal-image-placeholder" style={{ color: project.color || "var(--accent)" }}>
                 {PROJECT_ICONS[project.icon] ?? PROJECT_ICONS.cards}
@@ -1000,8 +1005,12 @@ function Projects({ t }) {
                   <div>
                     <div className="carousel-card-header">
                       <span className="carousel-card-tag">{p.tag}</span>
-                      <a href={p.github || LINKS.github} target="_blank" rel="noopener noreferrer" className="carousel-card-github" aria-label={`GitHub ${p.title}`} onClick={e => e.stopPropagation()}>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                      <a href={p.link || p.github || LINKS.github} target="_blank" rel="noopener noreferrer" className="carousel-card-github" aria-label={p.link ? `Visitar site ${p.title}` : `GitHub ${p.title}`} onClick={e => e.stopPropagation()}>
+                        {p.link ? (
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        ) : (
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        )}
                       </a>
                     </div>
                     <h3 className="carousel-card-title">{p.title}</h3>
@@ -1039,8 +1048,11 @@ function Contributions({ t }) {
         <div className="contributions-grid">
           {t.contributions.items.map((item, i) => (
             <div key={i} className="contribution-card">
-              <div className="contribution-card-image" style={{ background: `linear-gradient(135deg, ${item.color}30 0%, ${item.color}08 100%)` }}>
-                <div className="contribution-card-image-placeholder" style={{ color: item.color || "var(--accent)" }}>
+              <div className={`contribution-card-image ${item.imageAlign === "left" ? "image-left" : ""}`} style={item.image ? {} : { background: `linear-gradient(135deg, ${item.color}30 0%, ${item.color}08 100%)` }}>
+                {item.image && (
+                  <img src={item.image} alt={item.name} loading="lazy" onError={e => { e.target.style.display = "none"; e.target.nextElementSibling?.classList.add("visible"); }} />
+                )}
+                <div className={`contribution-card-image-placeholder ${!item.image ? "visible" : ""}`} style={{ color: item.color || "var(--accent)" }}>
                   {PROJECT_ICONS[item.icon] ?? PROJECT_ICONS.chart}
                 </div>
               </div>
@@ -1056,6 +1068,7 @@ function Contributions({ t }) {
             </div>
           ))}
         </div>
+        {t.contributions.imageNote && <p className="contribution-image-note">{t.contributions.imageNote}</p>}
       </Reveal>
     </section>
   );
@@ -1103,7 +1116,7 @@ function Contact({ t }) {
         <a href={`mailto:${t.contact.email}`} className="btn btn-primary" style={{ margin: "0 auto" }}>{t.contact.cta} →</a>
         <div className="contact-links">
           <a href="mailto:mariana.msamp@gmail.com" className="contact-link" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>mariana.msamp@gmail.com</a>
-          <a href="https://github.com/myoui01" target="_blank" rel="noopener" className="contact-link" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
+          <a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="contact-link" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
           <a href="https://www.linkedin.com/in/mariana-marques-dev/" target="_blank" rel="noopener" className="contact-link" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
         </div>
       </Reveal>
@@ -1126,7 +1139,6 @@ function Footer({ t }) {
         <div className="footer-old-credits">
           <p>{t.footer.credits}</p>
           <p>{t.footer.rights}</p>
-          <p style={{ marginTop: 12 }}><a href="#design-preview" style={{ color: "var(--text-tertiary)", fontSize: 12, textDecoration: "none" }}>Ver preview dos modelos de cards →</a></p>
         </div>
       </div>
     </footer>
@@ -1146,7 +1158,7 @@ export default function Portfolio() {
       <CustomCursor />
       <Nav t={t} lang={lang} setLang={setLang} navItems={navItems}/>
       <main>
-        <Hero t={t}/><Separator/><About t={t}/><Achievement t={t}/><Separator/><Stack t={t}/><Separator/>
+        <Hero t={t} lang={lang}/><Separator/><About t={t}/><Achievement t={t}/><Separator/><Stack t={t}/><Separator/>
         <Projects t={t}/><Separator/><Contributions t={t}/><Separator/><Experience t={t}/><Separator/>
         <Contact t={t}/>
       </main>
