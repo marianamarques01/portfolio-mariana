@@ -579,6 +579,21 @@ body.custom-cursor-active *{cursor:none}
 .contribution-card-tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-tertiary);letter-spacing:.12em;text-transform:uppercase;flex-shrink:0}
 .contribution-card-title{font-size:20px;font-weight:700;letter-spacing:-.03em;margin-bottom:8px;line-height:1.25;background:linear-gradient(135deg,var(--text-primary) 0%,var(--text-secondary) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .contribution-card-brief{font-size:13px;color:var(--text-secondary);line-height:1.6;flex:1}
+/* ── Contribution card: compact (no image) ── */
+.contribution-card--compact{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all .5s cubic-bezier(0.34,1.56,0.64,1);display:flex;flex-direction:column;min-height:0;box-shadow:0 4px 24px rgba(0,0,0,.2);position:relative}
+.contribution-card--compact::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.contribution-card--compact:hover{border-color:rgba(0,172,193,.35);transform:translateY(-8px) scale(1.01);box-shadow:0 24px 48px rgba(0,0,0,.4),0 0 0 1px rgba(0,172,193,.15)}
+.contribution-card--compact .compact-inner{padding:28px 28px 24px;display:flex;flex-direction:column;gap:14px;height:100%}
+.contribution-card--compact .compact-top{display:flex;align-items:flex-start;gap:16px}
+.contribution-card--compact .compact-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .5s cubic-bezier(0.34,1.56,0.64,1),box-shadow .4s var(--transition)}
+.contribution-card--compact:hover .compact-icon{transform:scale(1.1) rotate(-4deg);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.contribution-card--compact .compact-icon svg{width:22px;height:22px}
+.contribution-card--compact .compact-meta{flex:1;min-width:0}
+.contribution-card--compact .contribution-card-tag{margin-bottom:6px;display:block}
+.contribution-card--compact .contribution-card-title{margin-bottom:0}
+.contribution-card--compact .compact-brief{font-size:13px;color:var(--text-secondary);line-height:1.7;flex:1}
+.contribution-card--compact .compact-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:12px}
+.contribution-card--compact .compact-pill{padding:4px 10px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.04em;border:1px solid;transition:background .3s var(--transition)}
 @media(max-width:768px){.contributions-grid{grid-template-columns:1fr}.contribution-card{flex-direction:column;min-height:auto}.contribution-card-image{flex:0 0 auto;aspect-ratio:16/10;min-height:auto}}
 
 /* ── Modal ── */
@@ -1052,27 +1067,43 @@ function Contributions({ t }) {
       <Reveal><p className="section-label">{t.contributions.label}</p><h2 className="section-title">{t.contributions.title}</h2><p className="section-subtitle">{t.contributions.subtitle}</p></Reveal>
       <Reveal delay={1}>
         <div className="contributions-grid">
-          {t.contributions.items.map((item, i) => (
-            <div key={i} className="contribution-card">
-              <div className={`contribution-card-image ${item.imageAlign === "left" ? "image-left" : ""}`} style={item.image ? {} : { background: `linear-gradient(135deg, ${item.color}30 0%, ${item.color}08 100%)` }}>
-                {item.image && (
+          {t.contributions.items.map((item, i) =>
+            item.image ? (
+              <div key={i} className="contribution-card">
+                <div className={`contribution-card-image ${item.imageAlign === "left" ? "image-left" : ""}`}>
                   <img src={item.image} alt={item.name} loading="lazy" onError={e => { e.target.style.display = "none"; e.target.nextElementSibling?.classList.add("visible"); }} />
-                )}
-                <div className={`contribution-card-image-placeholder ${!item.image ? "visible" : ""}`} style={{ color: item.color || "var(--accent)" }}>
-                  {PROJECT_ICONS[item.icon] ?? PROJECT_ICONS.chart}
-                </div>
-              </div>
-              <div className="contribution-card-content">
-                <div>
-                  <div className="contribution-card-header">
-                    <span className="contribution-card-tag">{item.tag}</span>
+                  <div className="contribution-card-image-placeholder" style={{ color: item.color || "var(--accent)" }}>
+                    {PROJECT_ICONS[item.icon] ?? PROJECT_ICONS.chart}
                   </div>
-                  <h3 className="contribution-card-title">{item.name}</h3>
-                  <p className="contribution-card-brief">{item.brief}</p>
+                </div>
+                <div className="contribution-card-content">
+                  <div>
+                    <div className="contribution-card-header">
+                      <span className="contribution-card-tag">{item.tag}</span>
+                    </div>
+                    <h3 className="contribution-card-title">{item.name}</h3>
+                    <p className="contribution-card-brief">{item.brief}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ) : (
+              <div key={i} className="contribution-card--compact" style={{ '--card-accent': item.color || 'var(--accent)' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, ${item.color} 0%, ${item.color}40 100%)`, borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0' }} />
+                <div className="compact-inner">
+                  <div className="compact-top">
+                    <div className="compact-icon" style={{ background: `${item.color}18`, color: item.color }}>
+                      {PROJECT_ICONS[item.icon] ?? PROJECT_ICONS.chart}
+                    </div>
+                    <div className="compact-meta">
+                      <span className="contribution-card-tag">{item.tag}</span>
+                      <h3 className="contribution-card-title">{item.name}</h3>
+                    </div>
+                  </div>
+                  <p className="compact-brief">{item.brief}</p>
+                </div>
+              </div>
+            )
+          )}
         </div>
         {t.contributions.imageNote && <p className="contribution-image-note">{t.contributions.imageNote}</p>}
       </Reveal>
